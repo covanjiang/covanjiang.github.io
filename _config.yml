@@ -1,0 +1,64 @@
+# site information
+site: Covan Jiang
+title: Covan Jiang's Blog.
+description: Simple and minimalistic jekyll blogging.
+url: https://covanjiang.github.io
+baseurl: ""
+permalink: pretty
+twitter:
+  username: #yourusername
+  card: summary
+  creator: #yourusername
+author:
+  twitter: #yourusername
+  name: covanjiang
+  avatar:
+  email:
+  url: https://covanjiang.github.io
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - .jekyll-cache
+
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+
+paginate: 15
+paginate_path: "page/:num"
+paginate_prev: "Newer Posts"
+paginate_next: "Older Posts"
+
+highlighter: rouge
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:slug
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

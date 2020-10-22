@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<section class="posts">
+    <div class="pagination">
+        <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+        <div class="flip-button">
+            <div class="previous">
+                {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ site.paginate_prev | escape }}</a>
+                {% else %}
+                <span class="no-way">{{ site.paginate_prev | escape }}</span>
+                {% endif %}
+            </div>
+
+            <span class="split">|</span>
+
+            {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="next">{{ site.paginate_next | escape }}</a>
+            {% else %}
+            <span class="no-way">{{ site.paginate_next | escape }}</span>
+            {% endif %}
+        </div>
+    </div>
+
+    <ul>
+        {% for post in paginator.posts %}
+        <li>
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m-%d-%Y" }}</time>
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% if paginator.total_pages > 1 %}
+    <div class="page">
+        <span class="current">Page To:</span>
+        {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+        <span class="current">{{ page }}</span>
+        {% elsif page == 1 %}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+        {% else %}
+        <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
