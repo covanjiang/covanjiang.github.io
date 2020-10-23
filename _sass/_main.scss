@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica,helvetica neue,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica, helvetica neue, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -37,7 +37,7 @@ img {
 }
 
 hr {
-  background: #000;
+  background: #353535;
   height: 1px;
   border: 0;
 }
@@ -66,7 +66,6 @@ figcaption {
 }
 
 a {
-  color: #000;
   text-decoration-skip-ink: auto;
   text-decoration: none;
 
@@ -111,6 +110,11 @@ header {
     margin-bottom: 0.2rem;
     text-align: right;
     margin-right: 2rem;
+  }
+
+  a.active {
+    font-weight: bold;
+    text-decoration: none;
   }
 }
 
@@ -280,11 +284,6 @@ logo {
 }
 
 @media screen and (max-width: 45rem) {
-  a:hover {
-    text-decoration: none;
-    color: #000;
-  }
-
   header {
     ul {
       border-right: 0;
