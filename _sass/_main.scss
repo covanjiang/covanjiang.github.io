@@ -283,6 +283,14 @@ logo {
   line-height: 2rem;
 }
 
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 0;
+  margin-right: 40px;
+  display: none;
+}
+
 @media screen and (max-width: 45rem) {
   header {
     ul {
