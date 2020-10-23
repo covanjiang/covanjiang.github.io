@@ -128,6 +128,14 @@ logo {
   margin: 2.5rem auto 0.5rem;
 }
 
+.split {
+  margin-left: 0.3rem;
+}
+
+.split-more {
+  margin: auto 0.7rem;
+}
+
 .photos {
   ul {
     list-style: none;
@@ -138,12 +146,44 @@ logo {
   }
 }
 
-.split {
-  margin-left: 0.3rem;
+.photo {
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  picture {
+    margin-bottom: 0.5rem;
+  }
 }
 
-.split-more {
-  margin: auto 0.7rem;
+.projects {
+  li {
+    a {
+      // white-space:nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    time {
+      padding-left: 1rem;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+  }
+}
+
+.project {
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  picture {
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    list-style-position: inside;
+  }
 }
 
 .posts {
@@ -209,22 +249,6 @@ logo {
   }
 }
 
-.projects {
-  li {
-    a {
-      // white-space:nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    time {
-      padding-left: 1rem;
-      white-space: nowrap;
-      font-variant-numeric: tabular-nums;
-    }
-  }
-}
-
 .post {
   p {
     margin: 0.5rem 0;
@@ -242,30 +266,6 @@ logo {
   }
 
   ul, ol {
-    list-style-position: inside;
-  }
-}
-
-.photo {
-  h2:first-child {
-    margin-top: 0;
-  }
-
-  picture {
-    margin-bottom: 0.5rem;
-  }
-}
-
-.project {
-  h2:first-child {
-    margin-top: 0;
-  }
-
-  picture {
-    margin-bottom: 0.5rem;
-  }
-
-  ul {
     list-style-position: inside;
   }
 }

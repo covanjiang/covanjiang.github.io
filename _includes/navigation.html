@@ -1,9 +1,11 @@
 <header role="banner">
     <nav role="navigation">
         <ul>
+            {% assign urlPath = '/page/' | append: paginator.page | append: '/' %}
+            {% assign writingPath = '/' %}
             {% for item in site.data.navigation.links %}
             <li>
-                <a href="{{ item.url }}" {% if item.url == page.url %} class="active" {% endif %}>{{ item.title }}</a>
+                <a href="{{ item.url }}" {% if item.url == page.url or (item.url == writingPath and page.url == urlPath) %} class="active" {% endif %}>{{ item.title }}</a>
             </li>
             {% endfor %}
         </ul>
