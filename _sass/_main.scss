@@ -288,11 +288,11 @@ logo {
 }
 
 #back-to-top {
+  display: none;
   position: fixed;
   bottom: 30px;
   right: 0;
   margin-right: 40px;
-  display: none;
 }
 
 @media screen and (max-width: 45rem) {
@@ -331,31 +331,14 @@ logo {
 }
 
 @media screen and (max-width: 68rem) {
-  .tag {
-    position: relative;
-  }
-
-  .back-to-top {
-    display: inline-block;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    font-size: 16px;
-    font-weight: normal;
-  }
-
-  .post-back-to-top {
-    display: block;
-    position: fixed;
+  #back-to-top {
     background-color: #353535;
     color: #fff;
     width: 64px;
     height: 32px;
     border-top-left-radius: 4px;
-    padding: 5px 4px 4px 8px;
+    padding: 5px;
     bottom: 0;
-    right: 0;
-    font-size: 16px;
-    font-weight: normal;
+    margin-right: 0;
   }
 }

@@ -11,7 +11,7 @@ title: Tags
 </div>
 
 {% for tag in site.tags %}
-<h2 id="{{ tag[0] }}" class="tag"># {{ tag[0] }}<a href="javascript:void(0);" title="Back To Top" class="back-to-top">To Top</a></h2>
+<h2 id="{{ tag[0] }}"># {{ tag[0] }}</h2>
 <div class="posts">
     <ul>
         {% for post in tag[1] %}
@@ -23,5 +23,4 @@ title: Tags
     </ul>
 </div>
 {% endfor %}
-
 {% include back_to_top.html %}

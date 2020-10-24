@@ -13,29 +13,31 @@
                 timer = null;
             }
         };
+
         let timer = setInterval(gotoTop, 1);
     }
 
-    window.onscroll = function () {
+    function turnTop() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
         if (scrollTop > 258) {
-            if (window.innerWidth >= 1096) {
-                document.getElementById("back-to-top").style.display = "inline-block";
-            }
+            document.getElementById("back-to-top").style.display = "block";
         } else {
             document.getElementById("back-to-top").style.display = "none";
         }
+    }
+
+    window.onresize = function () {
+        turnTop();
+    };
+
+    window.onscroll = function () {
+        turnTop();
     };
 
     document.getElementById("back-to-top").addEventListener('click', function () {
         toTop();
+
         return false;
     });
-
-    for (let i = 0; i < document.getElementsByClassName("back-to-top").length; i++) {
-        document.getElementsByClassName("back-to-top")[i].addEventListener('click', function () {
-            toTop();
-            return false;
-        });
-    }
 </script>
