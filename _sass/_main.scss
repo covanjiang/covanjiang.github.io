@@ -343,4 +343,19 @@ logo {
     font-size: 16px;
     font-weight: normal;
   }
+
+  .post-back-to-top {
+    display: block;
+    position: fixed;
+    background-color: #353535;
+    color: #fff;
+    width: 64px;
+    height: 32px;
+    border-radius: 4px;
+    padding: 4px 4px 4px 8px;
+    bottom: 0;
+    right: 0;
+    font-size: 16px;
+    font-weight: normal;
+  }
 }
