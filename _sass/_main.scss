@@ -371,6 +371,7 @@ logo {
 
 @media screen and (max-width: 68rem) {
   #back-to-top {
+    z-index: 9999;
     background-color: #353535;
     color: #fff;
     width: 64px;
