@@ -1,0 +1,51 @@
+<div class="toc">
+    <span class="index">Index</span>
+    {% include toc.html html=content sanitize=true h_min=3 h_max=4 submenu_class='second-toc' %}
+</div>
+<div class="catalog">
+    <span class="index">Index</span>
+    {% include toc.html html=content sanitize=true h_min=3 h_max=4 submenu_class='second-toc' %}
+</div>
+<script type="text/javascript">
+    function turnCatalog() {
+        let scrollTop = $(document).scrollTop();
+
+        if (scrollTop > 245 && $(window).width() >= 1260) {
+            $(".catalog").show();
+        } else {
+            $(".catalog").hide();
+        }
+    }
+
+    function locateCatalog() {
+        let header = $('.post h3, .post h4');
+        let catalog_header = $('.catalog').find('a');
+        let scroll_height = $(window).scrollTop();
+        for (let i = 0; i < header.length; i++) {
+            let a_height = $(header[i]).offset().top;
+            if (a_height - 100 < scroll_height || $(this).scrollTop() + $(this).height() == $(document).height()) {
+                catalog_header.removeClass('catalog-active');
+                $(catalog_header[i]).addClass('catalog-active');
+            }
+        }
+    }
+
+    let oldMethod = window.onscroll;
+    if (typeof oldMethod == 'function') {
+        window.onscroll = function () {
+            turnCatalog();
+            locateCatalog();
+
+            oldMethod.call(this);
+        }
+    }
+
+    oldMethod = window.onresize;
+    if (typeof oldMethod == 'function') {
+        window.onresize = function () {
+            turnCatalog();
+
+            oldMethod.call(this);
+        }
+    }
+</script>
