@@ -328,7 +328,9 @@ logo {
   .tags {
     margin-bottom: 1rem;
   }
+}
 
+@media screen and (max-width: 68rem) {
   .tag {
     position: relative;
   }
@@ -339,5 +341,6 @@ logo {
     bottom: 0;
     right: 0;
     font-size: 16px;
+    font-weight: normal;
   }
 }
