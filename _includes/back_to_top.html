@@ -1,4 +1,4 @@
-<a href="javascript:void(0);" title="Back To Top" id="back-to-top">TOP</a>
+<a href="javascript:void(0);" title="Back To Top" id="back-to-top">To TOP</a>
 
 <script type="text/javascript">
     function toTop() {
@@ -19,7 +19,7 @@
     window.onscroll = function () {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
         if (scrollTop > 258) {
-            if(window.innerWidth >= 1096){
+            if (window.innerWidth >= 1096) {
                 document.getElementById("back-to-top").style.display = "inline-block";
             }
         } else {
@@ -31,4 +31,11 @@
         toTop();
         return false;
     });
+
+    for (let i = 0; i < document.getElementsByClassName("back-to-top").length; i++) {
+        document.getElementsByClassName("back-to-top")[i].addEventListener('click', function () {
+            toTop();
+            return false;
+        });
+    }
 </script>
