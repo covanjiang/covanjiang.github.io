@@ -4,6 +4,7 @@ title: 当在浏览器中输入 “google.com” 时发生了什么？
 description: Increase the security of your Netlify website by adding security headers
 summary: Increase the security of your Netlify website by adding security headers.
 comments: true
+catalog: true
 ---
 
 非直译，增加了部分细节，原文：[what-happens-when](https://github.com/alex/what-happens-when) 。

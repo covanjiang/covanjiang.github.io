@@ -5,7 +5,9 @@ layout: default
 {% include back_to_top.html %}
 <section class="post">
     <h1>{{ page.title }}</h1>
+    {% if page.catalog %}
     {% include catalog.html %}
+    {% endif %}
     {{ content }}
     <span class="meta">
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
