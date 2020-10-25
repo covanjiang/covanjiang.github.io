@@ -19,6 +19,9 @@
         $(this).hide();
         $('.catalog').show(300);
         $('.close').show();
+        $('body').css({
+            "overflow":"hidden"
+        });
 
         return false;
     });
@@ -27,6 +30,9 @@
         $(this).hide();
         $('.catalog').hide(300);
         $('.open').show();
+        $('body').css({
+            "overflow":"auto"
+        });
 
         return false;
     });
