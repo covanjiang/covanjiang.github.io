@@ -1,12 +1,36 @@
-<div class="toc">
-    <span class="index">Index</span>
-    {% include toc.html html=content sanitize=true h_min=3 h_max=4 submenu_class='second-toc' %}
-</div>
 <div class="catalog">
     <span class="index">Index</span>
     {% include toc.html html=content sanitize=true h_min=3 h_max=4 submenu_class='second-toc' %}
+    <a class="close" href="javascript:void(0);">X</a>
 </div>
+<a class="open" href="javascript:void(0);">Catalog</a>
 <script type="text/javascript">
+    let $root = $('html, body');
+    $('.catalog li a').on("click", function () {
+        $root.animate({
+            scrollTop: $($.attr(this, 'href')).offset().top - 65
+        }, 400);
+        $('.open').show();
+
+        return false;
+    });
+
+    $('.open').on("click", function () {
+        $(this).hide();
+        $('.catalog').show(300);
+        $('.close').show();
+
+        return false;
+    });
+
+    $('.close').on("click", function () {
+        $(this).hide();
+        $('.catalog').hide(300);
+        $('.open').show();
+
+        return false;
+    });
+
     function turnCatalog() {
         let scrollTop = $(document).scrollTop();
 

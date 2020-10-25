@@ -312,7 +312,11 @@ logo {
   overflow: auto;
 }
 
-.toc {
+.open {
+  display: block;
+}
+
+.close {
   display: none;
 }
 
@@ -328,9 +332,36 @@ logo {
 @media screen and (max-width: 1216px) {
   .catalog {
     display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    padding: 20px;
+    overflow: auto;
+    z-index: 1000;
+    background-color: white;
   }
-  .toc {
+  .open {
     display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #353535;
+    color: #fff;
+    width: 64px;
+    height: 32px;
+    border-top-right-radius: 4px;
+    padding: 5px;
+  }
+  .close {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    z-index: 1001;
   }
 }
 
@@ -371,7 +402,7 @@ logo {
 
 @media screen and (max-width: 68rem) {
   #back-to-top {
-    z-index: 9999;
+    z-index: 999;
     background-color: #353535;
     color: #fff;
     width: 64px;
