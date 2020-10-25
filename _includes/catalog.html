@@ -34,10 +34,12 @@
     function turnCatalog() {
         let scrollTop = $(document).scrollTop();
 
-        if (scrollTop > 245 && $(window).width() >= 1260) {
-            $(".catalog").show();
-        } else {
-            $(".catalog").hide();
+        if($(window).width() >= 1260) {
+            if (scrollTop > 245) {
+                $(".catalog").show();
+            } else {
+                $(".catalog").hide();
+            }
         }
     }
 
