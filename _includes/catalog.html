@@ -10,7 +10,7 @@
         $root.animate({
             scrollTop: $($.attr(this, 'href')).offset().top - 65
         }, 400);
-        $('.open').show();
+        closeCatalog();
 
         return false;
     });
@@ -27,15 +27,19 @@
     });
 
     $('.close').on("click", function () {
+        closeCatalog();
+
+        return false;
+    });
+
+    function closeCatalog() {
         $(this).hide();
         $('.catalog').hide(300);
         $('.open').show();
         $('body').css({
             "overflow":"auto"
         });
-
-        return false;
-    });
+    }
 
     function turnCatalog() {
         let scrollTop = $(document).scrollTop();
