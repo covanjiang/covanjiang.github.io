@@ -5,47 +5,21 @@
 </div>
 <a class="open" href="javascript:void(0);">Catalog</a>
 <script type="text/javascript">
-    let $root = $('html, body');
-    $('.catalog li a').on("click", function () {
-        $root.animate({
-            scrollTop: $($.attr(this, 'href')).offset().top - 65
-        }, 400);
-        closeCatalog();
-
-        return false;
-    });
-
-    $('.open').on("click", function () {
-        $(this).hide();
-        $('.catalog').show(300);
-        $('.close').show(300);
-        $('body').css({
-            "overflow":"hidden"
-        });
-
-        return false;
-    });
-
-    $('.close').on("click", function () {
-        closeCatalog();
-
-        return false;
-    });
-
     function closeCatalog() {
-        $(this).hide();
         $('.catalog').hide(300);
         $('.open').show();
         $('body').css({
-            "overflow":"auto"
+            "overflow": "auto"
         });
     }
 
     function turnCatalog() {
         let scrollTop = $(document).scrollTop();
 
-        if($(window).width() >= 1260) {
+        if ($(window).width() >= 1216) {
             if (scrollTop > 245) {
+                let left = $(window).width() - (($(window).width() - $("main").width()) / 2 + $("main").width() + $(".catalog").width() - 150);
+                $(".catalog").css("left", left);
                 $(".catalog").show();
             } else {
                 $(".catalog").hide();
@@ -66,22 +40,47 @@
         }
     }
 
-    let oldMethod = window.onscroll;
-    if (typeof oldMethod == 'function') {
-        window.onscroll = function () {
+    $(document).ready(function () {
+        $(window).scroll(function () {
             turnCatalog();
             locateCatalog();
+        });
 
-            oldMethod.call(this);
-        }
-    }
+        $(window).resize(function () {
+            $('.close').hide();
+            $('.catalog').hide();
+            $('.open').show();
+            $('body').css({
+                "overflow": "auto"
+            });
 
-    oldMethod = window.onresize;
-    if (typeof oldMethod == 'function') {
-        window.onresize = function () {
             turnCatalog();
+        });
 
-            oldMethod.call(this);
-        }
-    }
+        let $root = $('html, body');
+        $('.catalog li a').on("click", function () {
+            $root.animate({
+                scrollTop: $($.attr(this, 'href')).offset().top - 65
+            }, 400);
+
+            if ($(window).width() < 1216) {
+                closeCatalog();
+            }
+        });
+
+        $('.open').on("click", function () {
+            $(this).hide();
+            $('.catalog').show(300);
+            $('.close').show(300);
+            $('body').css({
+                "overflow": "hidden"
+            });
+        });
+
+        $('.close').on("click", function () {
+            $(this).hide();
+
+            closeCatalog();
+        });
+    });
 </script>

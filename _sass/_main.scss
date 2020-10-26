@@ -291,8 +291,13 @@ logo {
 #back-to-top {
   display: none;
   position: fixed;
+  background-color: #353535;
+  color: #fff;
+  width: 64px;
+  height: 32px;
+  border-radius: 4px;
+  padding: 5px;
   bottom: 30px;
-  right: 0;
   margin-right: 40px;
 }
 
@@ -304,11 +309,9 @@ logo {
 .catalog {
   display: none;
   position: fixed;
-  left: 0;
   top: 30px;
   width: 256px;
   height: 90%;
-  margin-left: 44px;
   overflow: auto;
 }
 
@@ -329,7 +332,17 @@ logo {
   color: white;
 }
 
-@media screen and (max-width: 1216px) {
+@media screen and (max-width: 76rem) {
+  #back-to-top {
+    z-index: 999;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    right: 0;
+    bottom: 0;
+    margin-right: 0;
+  }
+
   .catalog {
     display: none;
     position: fixed;
@@ -337,12 +350,12 @@ logo {
     top: 0;
     width: 100%;
     height: 100%;
-    margin-left: 0;
-    padding: 20px;
+    padding: 30px 0 30px 40px;
     overflow: auto;
     z-index: 1000;
     background-color: white;
   }
+
   .open {
     display: block;
     position: fixed;
@@ -356,6 +369,7 @@ logo {
     border-top-right-radius: 4px;
     padding: 5px;
   }
+
   .close {
     display: none;
     position: fixed;
@@ -397,19 +411,5 @@ logo {
 
   .tags {
     margin-bottom: 1rem;
-  }
-}
-
-@media screen and (max-width: 68rem) {
-  #back-to-top {
-    z-index: 999;
-    background-color: #353535;
-    color: #fff;
-    width: 64px;
-    height: 32px;
-    border-top-left-radius: 4px;
-    padding: 5px;
-    bottom: 0;
-    margin-right: 0;
   }
 }

@@ -1,43 +1,30 @@
 <a href="javascript:void(0);" title="Back To Top" id="back-to-top">To TOP</a>
 
 <script type="text/javascript">
-    function toTop() {
-        let gotoTop = function () {
-            let currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
-            currentPosition -= 50;
-            if (currentPosition > 0) {
-                window.scrollTo(0, currentPosition);
-            } else {
-                window.scrollTo(0, 0);
-                clearInterval(timer);
-                timer = null;
-            }
-        };
-
-        let timer = setInterval(gotoTop, 1);
-    }
-
     function turnTop() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-
-        if (scrollTop > 258) {
-            document.getElementById("back-to-top").style.display = "block";
+        if ($(window).scrollTop() > 258) {
+            if ($(window).width() >= 1216) {
+                $("#back-to-top").css("left", ($(window).width() - $("main").width()) / 2 + $("main").width());
+            } else {
+                $("#back-to-top").css("left", "auto");
+            }
+            $("#back-to-top").show();
         } else {
-            document.getElementById("back-to-top").style.display = "none";
+            $("#back-to-top").hide();
         }
     }
 
-    window.onresize = function () {
-        turnTop();
-    };
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            turnTop();
+        });
 
-    window.onscroll = function () {
-        turnTop();
-    };
+        $(window).resize(function () {
+            turnTop();
+        });
 
-    document.getElementById("back-to-top").addEventListener('click', function () {
-        toTop();
-
-        return false;
+        $("#back-to-top").on('click', function () {
+            $('html, body').animate({scrollTop: 0}, 400);
+        });
     });
 </script>
