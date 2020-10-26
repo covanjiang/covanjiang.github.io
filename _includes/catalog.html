@@ -47,9 +47,11 @@
         });
 
         $(window).resize(function () {
+            if ($(window).width() < 1216) {
+                $('.open').show();
+            }
             $('.close').hide();
             $('.catalog').hide();
-            $('.open').show();
             $('body').css({
                 "overflow": "auto"
             });
