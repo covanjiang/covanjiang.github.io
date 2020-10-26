@@ -357,6 +357,14 @@ logo {
     background-color: white;
   }
 
+  .close {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    z-index: 1001;
+  }
+
   .open {
     display: block;
     position: fixed;
@@ -369,14 +377,6 @@ logo {
     height: 32px;
     border-top-right-radius: 4px;
     padding: 5px;
-  }
-
-  .close {
-    display: none;
-    position: fixed;
-    bottom: 30px;
-    right: 40px;
-    z-index: 1001;
   }
 }
 

@@ -14,16 +14,22 @@
     }
 
     function turnCatalog() {
-        let scrollTop = $(document).scrollTop();
+        let scrollTop = $(document).scrollTop(),
+            $catalog = $(".catalog");
 
-        if ($(window).width() >= 1216) {
-            if (scrollTop > 245) {
-                let left = $(window).width() - (($(window).width() - $("main").width()) / 2 + $("main").width() + $(".catalog").width() - 150);
-                $(".catalog").css("left", left);
-                $(".catalog").show();
+        if (scrollTop > 245) {
+            $catalog.show();
+            if ($(window).width() >= 1216) {
+                let totalWidth = $(window).width(),
+                    mainWidth = $("main").width(),
+                    left = totalWidth - ((totalWidth - mainWidth) / 2 + mainWidth + $(".catalog").width() - 150);
+
+                $catalog.css("left", left);
             } else {
-                $(".catalog").hide();
+                $catalog.hide();
             }
+        } else {
+            $catalog.hide();
         }
     }
 
@@ -47,14 +53,16 @@
         });
 
         $(window).resize(function () {
-            if ($(window).width() < 1216) {
-                $('.open').show();
+            if ($(".catalog").css("display") === "block") {
+                $('.close').hide();
+                $('.catalog').hide();
+                $('body').css({
+                    "overflow": "auto"
+                });
+                if ($(window).width() < 1216) {
+                    $('.open').show();
+                }
             }
-            $('.close').hide();
-            $('.catalog').hide();
-            $('body').css({
-                "overflow": "auto"
-            });
 
             turnCatalog();
         });
