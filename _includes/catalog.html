@@ -29,11 +29,12 @@
                 $catalog.hide();
             }
         } else {
-            $catalog.css("left", "0");
-            $('.close').show();
-            $('html, body').css({
-                "overflow": "hidden"
-            });
+            if (scrollTop > 245) {
+                $('.close').show();
+                $('html, body').css({
+                    "overflow": "hidden"
+                })
+            }
         }
     }
 
