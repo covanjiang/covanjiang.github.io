@@ -38,6 +38,10 @@ paginate_prev: "Newer Posts"
 paginate_next: "Older Posts"
 
 highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 collections:
   pages:
