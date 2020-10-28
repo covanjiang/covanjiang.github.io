@@ -31,9 +31,11 @@
         } else {
             if (scrollTop > 245) {
                 $catalog.css("left", '0');
-                $('.close').show();
+                $catalog.hide();
+                $('.close').hide();
+                $('.open').show();
                 $('html, body').css({
-                    "overflow": "hidden"
+                    "overflow": "auto"
                 })
             } else {
                 $('.open').show();
