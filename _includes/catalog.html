@@ -64,7 +64,12 @@
             locateCatalog();
         });
 
+        let oldWidth = $(window).width();
         $(window).resize(function () {
+            if (oldWidth === $(window).width()) {
+                return;
+            }
+
             if ($(window).width() >= 1216) {
                 closeCatalog();
                 $('.open').hide();
