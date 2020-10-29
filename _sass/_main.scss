@@ -375,6 +375,13 @@ logo {
 }
 
 @media screen and (max-width: 76rem) {
+  pre {
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+  }
+
   #back-to-top {
     z-index: 999;
     border-top-right-radius: 0;
