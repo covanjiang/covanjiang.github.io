@@ -305,7 +305,7 @@ logo {
 
 .tags {
   display: inline;
-  line-height: 2rem;
+  line-height: 2;
 }
 
 .back-to-top {
@@ -376,9 +376,6 @@ logo {
 }
 
 @media screen and (max-width: 76rem) {
-  body {
-    line-height: 2;
-  }
   #back-to-top {
     z-index: 999;
     border-top-right-radius: 0;
@@ -426,6 +423,14 @@ logo {
 }
 
 @media screen and (max-width: 45rem) {
+  .post {
+    line-height: 1.8;
+
+    h1 {
+      line-height: 1.8;
+    }
+  }
+
   pre {
     &::-webkit-scrollbar {
       width: 6px;
